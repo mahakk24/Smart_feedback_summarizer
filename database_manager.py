@@ -52,6 +52,7 @@ class SQLiteManager:
                 product TEXT,
                 rating INTEGER,
                 sentiment TEXT,
+                sentiment_label TEXT,
                 sentiment_confidence REAL,
                 topic INTEGER,
                 topic_name TEXT,

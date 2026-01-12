@@ -36,6 +36,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+
 # ============================================================================
 # CUSTOM CSS
 # ============================================================================
@@ -63,6 +64,7 @@ st.markdown("""
     }
     .summary-box {
         background-color: #e8f4f8;
+        color: #1a1a1a;
         padding: 1.5rem;
         border-radius: 0.5rem;
         border-left: 5px solid #1f77b4;
@@ -298,10 +300,14 @@ def main():
         with st.spinner("🔄 Processing data..."):
             try:
                 # Step 1: Preprocessing
+                # Step 1: Preprocessing (Spark disabled for dashboard)
                 st.info("⚙️ Step 1/4: Preprocessing data...")
-                preprocessor = SparkDataPreprocessor()
-                df_processed = preprocessor.process_feedback_data(st.session_state.df)
-                preprocessor.stop()
+
+                df_processed = st.session_state.df.copy()
+
+                # Ensure cleaned text exists
+                if "text_cleaned" not in df_processed.columns:
+                    df_processed["text_cleaned"] = df_processed["text"].astype(str)
                 
                 # Step 2: Sentiment Analysis
                 if run_sentiment:
@@ -326,7 +332,7 @@ def main():
                 st.session_state.analysis_complete = True
                 
                 st.success("✅ Analysis complete!")
-                st.rerun()
+                #st.rerun()
                 
             except Exception as e:
                 st.error(f"❌ Error during analysis: {str(e)}")
@@ -549,5 +555,4 @@ def main():
 # RUN APP
 # ============================================================================
 
-if __name__ == "__main__":
-    main()
+main()

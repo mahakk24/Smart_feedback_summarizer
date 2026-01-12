@@ -345,3 +345,503 @@ numpy.core._exceptions._UFuncNoLoopError: ufunc 'add' did not contain a loop wit
 2026-01-13 00:50:02,657 - __main__ - INFO - ======================================================================
 2026-01-13 00:50:02,657 - __main__ - INFO - Total duration: 363.29 seconds
 2026-01-13 00:50:02,659 - __main__ - INFO - Records processed: 517
+2026-01-13 01:51:28,903 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 01:51:28,930 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 01:51:28,930 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 01:51:28,946 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 01:51:28,946 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 01:51:44,612 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-13 01:51:44,613 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-13 01:51:44,613 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-13 01:51:47,477 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-13 01:51:47,477 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-13 01:51:47,477 - text_summarizer - INFO - Using device: CPU
+2026-01-13 01:51:47,477 - text_summarizer - INFO - Loading summarization model...
+2026-01-13 01:52:00,266 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:52:20,927 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:52:20,927 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:52:20,927 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:52:20,931 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:52:20,934 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:52:20,936 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:52:48,080 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:52:48,080 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 286 (55.3%)
+2026-01-13 01:52:48,080 - topic_extractor - INFO -   Really Disappointing | Disappointing | Quality: 154 (29.8%)
+2026-01-13 01:52:48,080 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:52:48,080 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-13 01:52:48,080 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 01:52:48,080 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:52:48,156 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:52:48,629 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:53:10,842 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:53:10,843 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:53:10,843 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:53:10,843 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:53:10,843 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:53:10,843 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:53:19,373 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:53:19,373 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 305 (59.0%)
+2026-01-13 01:53:19,373 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 123 (23.8%)
+2026-01-13 01:53:19,373 - topic_extractor - INFO -   Product Works | Okay | Works: 41 (7.9%)
+2026-01-13 01:53:19,373 - topic_extractor - INFO -   Average | Basic | Does: 26 (5.0%)
+2026-01-13 01:53:19,373 - topic_extractor - INFO -   Outlier: 22 (4.3%)
+2026-01-13 01:53:19,373 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:53:19,406 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:53:19,842 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:53:41,489 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:53:41,490 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:53:41,490 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:53:41,491 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:53:41,493 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:53:41,496 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:53:49,867 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:53:49,867 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-13 01:53:49,867 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 143 (27.7%)
+2026-01-13 01:53:49,867 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:53:49,867 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-13 01:53:49,867 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:53:49,867 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:53:49,905 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:53:50,428 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:54:09,797 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:54:09,798 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:54:09,798 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:54:09,799 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:54:09,802 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:54:09,803 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:54:17,551 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:54:17,551 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 304 (58.8%)
+2026-01-13 01:54:17,551 - topic_extractor - INFO -   Terrible | Disappointing | Really Disappointing: 124 (24.0%)
+2026-01-13 01:54:17,551 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:54:17,551 - topic_extractor - INFO -   Outlier: 37 (7.2%)
+2026-01-13 01:54:17,553 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:54:17,554 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:54:17,582 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:54:18,102 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:54:38,398 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:54:38,398 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:54:38,399 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:54:38,400 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:54:38,402 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:54:38,403 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:54:45,633 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:54:45,634 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-13 01:54:45,634 - topic_extractor - INFO -   Really Disappointing | Disappointing | Terrible: 129 (25.0%)
+2026-01-13 01:54:45,635 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:54:45,635 - topic_extractor - INFO -   Outlier: 37 (7.2%)
+2026-01-13 01:54:45,635 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:54:45,636 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:54:45,670 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:54:46,101 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:55:05,824 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:55:05,825 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:55:05,825 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:55:05,826 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:55:05,829 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:55:05,830 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:55:13,022 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:55:13,022 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-13 01:55:13,022 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 149 (28.8%)
+2026-01-13 01:55:13,023 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:55:13,023 - topic_extractor - INFO -   Outlier: 17 (3.3%)
+2026-01-13 01:55:13,023 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:55:13,024 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:55:13,048 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:55:13,389 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:55:33,156 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:55:33,157 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:55:33,157 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:55:33,158 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:55:33,160 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:55:33,162 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:55:42,101 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:55:42,101 - topic_extractor - INFO -   Product | Quality | Purchase: 440 (85.1%)
+2026-01-13 01:55:42,101 - topic_extractor - INFO -   Average | Basic | Does: 26 (5.0%)
+2026-01-13 01:55:42,101 - topic_extractor - INFO -   Outlier: 26 (5.0%)
+2026-01-13 01:55:42,101 - topic_extractor - INFO -   Cheap | Poor | Feels: 14 (2.7%)
+2026-01-13 01:55:42,101 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:55:42,101 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:55:42,142 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:55:42,610 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:56:03,865 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:56:03,865 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:56:03,865 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:56:03,866 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:56:03,868 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:56:03,870 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:56:12,351 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:56:12,351 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 291 (56.3%)
+2026-01-13 01:56:12,351 - topic_extractor - INFO -   Really Disappointing | Disappointing | Terrible: 148 (28.6%)
+2026-01-13 01:56:12,351 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:56:12,351 - topic_extractor - INFO -   Outlier: 24 (4.6%)
+2026-01-13 01:56:12,351 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 01:56:12,351 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:56:12,387 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:56:12,850 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:56:25,909 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:56:25,909 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:56:25,909 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:56:25,919 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:56:25,919 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:56:25,923 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:56:30,434 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:56:30,434 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 286 (55.3%)
+2026-01-13 01:56:30,434 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 149 (28.8%)
+2026-01-13 01:56:30,434 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:56:30,434 - topic_extractor - INFO -   Outlier: 28 (5.4%)
+2026-01-13 01:56:30,434 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 01:56:30,445 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:56:30,482 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:56:30,782 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:56:50,722 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:56:50,722 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:56:50,724 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:56:50,724 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:56:50,727 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:56:50,727 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:56:56,542 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:56:56,542 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 309 (59.8%)
+2026-01-13 01:56:56,542 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 133 (25.7%)
+2026-01-13 01:56:56,542 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:56:56,542 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-13 01:56:56,542 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:56:56,545 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:56:56,573 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:56:56,876 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:57:10,194 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:57:10,194 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:57:10,194 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:57:10,194 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:57:10,197 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:57:10,198 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:57:15,376 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:57:15,376 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 286 (55.3%)
+2026-01-13 01:57:15,377 - topic_extractor - INFO -   Really Disappointing | Disappointing | Quality: 154 (29.8%)
+2026-01-13 01:57:15,377 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:57:15,378 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-13 01:57:15,378 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 01:57:15,379 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:57:15,402 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:57:15,697 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:57:30,543 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:57:30,543 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:57:30,545 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:57:30,545 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:57:30,548 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:57:30,548 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:57:35,657 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:57:35,657 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 311 (60.2%)
+2026-01-13 01:57:35,657 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 126 (24.4%)
+2026-01-13 01:57:35,657 - topic_extractor - INFO -   Product Works | Okay | Works: 41 (7.9%)
+2026-01-13 01:57:35,657 - topic_extractor - INFO -   Average | Basic | Does: 26 (5.0%)
+2026-01-13 01:57:35,657 - topic_extractor - INFO -   Outlier: 13 (2.5%)
+2026-01-13 01:57:35,661 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:57:35,684 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:57:36,001 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:57:49,729 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:57:49,729 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:57:49,729 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:57:49,729 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:57:49,732 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:57:49,733 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:57:55,076 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:57:55,077 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 286 (55.3%)
+2026-01-13 01:57:55,077 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 148 (28.6%)
+2026-01-13 01:57:55,078 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:57:55,079 - topic_extractor - INFO -   Outlier: 29 (5.6%)
+2026-01-13 01:57:55,079 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 01:57:55,080 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:57:55,101 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:57:55,440 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:58:11,535 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:58:11,535 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:58:11,535 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:58:11,535 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:58:11,538 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:58:11,538 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:58:16,610 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:58:16,611 - topic_extractor - INFO -   Product | Impressive | Particularly Impressive: 421 (81.4%)
+2026-01-13 01:58:16,611 - topic_extractor - INFO -   Feels | Cheap | Average: 40 (7.7%)
+2026-01-13 01:58:16,611 - topic_extractor - INFO -   Outlier: 32 (6.2%)
+2026-01-13 01:58:16,611 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 01:58:16,612 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:58:16,613 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:58:16,642 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:58:16,960 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:58:30,801 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:58:30,801 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:58:30,801 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:58:30,803 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:58:30,804 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:58:30,805 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:58:36,892 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:58:36,892 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-13 01:58:36,893 - topic_extractor - INFO -   Really Disappointing | Disappointing | Terrible: 134 (25.9%)
+2026-01-13 01:58:36,893 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:58:36,893 - topic_extractor - INFO -   Outlier: 32 (6.2%)
+2026-01-13 01:58:36,894 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:58:36,894 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:58:36,932 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:58:37,382 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:58:55,489 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:58:55,489 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:58:55,489 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:58:55,489 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:58:55,492 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:58:55,493 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:59:01,063 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:59:01,063 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 309 (59.8%)
+2026-01-13 01:59:01,063 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 133 (25.7%)
+2026-01-13 01:59:01,063 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:59:01,063 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-13 01:59:01,063 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:59:01,063 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:59:01,097 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:59:01,440 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:59:15,268 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:59:15,270 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:59:15,270 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:59:15,270 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:59:15,271 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:59:15,273 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:59:20,830 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:59:20,830 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 291 (56.3%)
+2026-01-13 01:59:20,830 - topic_extractor - INFO -   Really Disappointing | Disappointing | Quality: 154 (29.8%)
+2026-01-13 01:59:20,830 - topic_extractor - INFO -   Product | Product Works | Work: 47 (9.1%)
+2026-01-13 01:59:20,830 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 01:59:20,830 - topic_extractor - INFO -   Outlier: 12 (2.3%)
+2026-01-13 01:59:20,836 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:59:20,869 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:59:21,306 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 01:59:42,207 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 01:59:42,207 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 01:59:42,207 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 01:59:42,209 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 01:59:42,210 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 01:59:42,211 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 01:59:50,434 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 01:59:50,434 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 304 (58.8%)
+2026-01-13 01:59:50,434 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 128 (24.8%)
+2026-01-13 01:59:50,434 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 01:59:50,434 - topic_extractor - INFO -   Outlier: 33 (6.4%)
+2026-01-13 01:59:50,434 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 01:59:50,434 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 01:59:50,464 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 01:59:50,800 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:00:07,429 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:00:07,430 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:00:07,430 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:00:07,431 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:00:07,432 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:00:07,433 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:00:13,174 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:00:13,175 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 292 (56.5%)
+2026-01-13 02:00:13,175 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 149 (28.8%)
+2026-01-13 02:00:13,175 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:00:13,175 - topic_extractor - INFO -   Outlier: 22 (4.3%)
+2026-01-13 02:00:13,176 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 02:00:13,177 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:00:13,202 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:00:13,551 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:00:30,273 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:00:30,273 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:00:30,273 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:00:30,274 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:00:30,275 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:00:30,276 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:00:35,839 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:00:35,839 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-13 02:00:35,839 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 133 (25.7%)
+2026-01-13 02:00:35,840 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:00:35,840 - topic_extractor - INFO -   Outlier: 33 (6.4%)
+2026-01-13 02:00:35,840 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:00:35,841 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:00:35,879 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:00:36,239 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:00:53,270 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:00:53,270 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:00:53,270 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:00:53,270 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:00:53,274 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:00:53,275 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:00:59,396 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:00:59,396 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 317 (61.3%)
+2026-01-13 02:00:59,396 - topic_extractor - INFO -   Terrible | Disappointing | Really Disappointing: 93 (18.0%)
+2026-01-13 02:00:59,396 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:00:59,397 - topic_extractor - INFO -   Cheap | Disappointed | Poor: 35 (6.8%)
+2026-01-13 02:00:59,397 - topic_extractor - INFO -   Average | Basic | Does: 26 (5.0%)
+2026-01-13 02:00:59,397 - topic_extractor - INFO -   Outlier: 5 (1.0%)
+2026-01-13 02:00:59,398 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:00:59,425 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:00:59,748 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:01:19,285 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:01:19,285 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:01:19,285 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:01:19,287 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:01:19,288 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:01:19,290 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:01:25,488 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:01:25,489 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 328 (63.4%)
+2026-01-13 02:01:25,490 - topic_extractor - INFO -   Customer | Poor | Quality: 114 (22.1%)
+2026-01-13 02:01:25,490 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:01:25,490 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-13 02:01:25,490 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:01:25,491 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:01:25,511 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:01:25,832 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:01:39,882 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:01:39,882 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:01:39,882 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:01:39,882 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:01:39,885 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:01:39,886 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:01:45,346 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:01:45,346 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 286 (55.3%)
+2026-01-13 02:01:45,346 - topic_extractor - INFO -   Disappointing | Really Disappointing | Really: 154 (29.8%)
+2026-01-13 02:01:45,346 - topic_extractor - INFO -   Product | Product Works | Work: 47 (9.1%)
+2026-01-13 02:01:45,346 - topic_extractor - INFO -   Outlier: 17 (3.3%)
+2026-01-13 02:01:45,346 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 02:01:45,348 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:01:45,373 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:01:45,677 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:02:00,124 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:02:00,124 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:02:00,124 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:02:00,125 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:02:00,126 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:02:00,127 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:02:05,464 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:02:05,464 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 305 (59.0%)
+2026-01-13 02:02:05,465 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 128 (24.8%)
+2026-01-13 02:02:05,465 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:02:05,465 - topic_extractor - INFO -   Outlier: 32 (6.2%)
+2026-01-13 02:02:05,465 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:02:05,467 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:02:05,493 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:02:05,838 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:02:22,048 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:02:22,048 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:02:22,048 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:02:22,048 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:02:22,052 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:02:22,053 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:02:28,567 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:02:28,567 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 305 (59.0%)
+2026-01-13 02:02:28,567 - topic_extractor - INFO -   Customer | Disappointing | Really Disappointing: 130 (25.1%)
+2026-01-13 02:02:28,567 - topic_extractor - INFO -   Product | Product Works | Work: 47 (9.1%)
+2026-01-13 02:02:28,567 - topic_extractor - INFO -   Outlier: 22 (4.3%)
+2026-01-13 02:02:28,570 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-13 02:02:28,570 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:02:28,594 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:02:28,898 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:02:48,740 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:02:48,740 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:02:48,740 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:02:48,740 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:02:48,745 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:02:48,745 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:02:56,232 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:02:56,232 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-13 02:02:56,233 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 128 (24.8%)
+2026-01-13 02:02:56,233 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:02:56,233 - topic_extractor - INFO -   Outlier: 38 (7.4%)
+2026-01-13 02:02:56,233 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:02:56,234 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:02:56,256 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:02:56,549 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:03:17,187 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:03:17,187 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:03:17,188 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:03:17,188 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:03:17,190 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:03:17,191 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:03:25,924 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:03:25,925 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 304 (58.8%)
+2026-01-13 02:03:25,925 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 133 (25.7%)
+2026-01-13 02:03:25,926 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:03:25,926 - topic_extractor - INFO -   Outlier: 28 (5.4%)
+2026-01-13 02:03:25,927 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:03:25,928 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:03:25,957 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:03:26,286 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:03:48,272 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:03:48,272 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:03:48,273 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:03:48,274 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:03:48,275 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:03:48,278 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:03:56,319 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:03:56,319 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 331 (64.0%)
+2026-01-13 02:03:56,319 - topic_extractor - INFO -   Customer | Poor | Support: 109 (21.1%)
+2026-01-13 02:03:56,319 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:03:56,319 - topic_extractor - INFO -   Outlier: 25 (4.8%)
+2026-01-13 02:03:56,319 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:03:56,324 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:03:56,350 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:03:56,733 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:04:16,048 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:04:16,048 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:04:16,048 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:04:16,049 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:10:09,608 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 02:10:09,619 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 02:10:09,620 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 02:10:09,625 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 02:10:09,626 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 02:10:12,443 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-13 02:10:12,443 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-13 02:10:12,444 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-13 02:10:15,259 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-13 02:10:15,259 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-13 02:10:15,259 - text_summarizer - INFO - Using device: CPU
+2026-01-13 02:10:15,259 - text_summarizer - INFO - Loading summarization model...
+2026-01-13 02:10:29,119 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:10:53,660 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:10:53,660 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:10:53,660 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:10:53,668 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:10:53,676 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:10:53,680 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:11:13,407 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:11:13,407 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 305 (59.0%)
+2026-01-13 02:11:13,407 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 128 (24.8%)
+2026-01-13 02:11:13,407 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:11:13,407 - topic_extractor - INFO -   Outlier: 32 (6.2%)
+2026-01-13 02:11:13,407 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:11:13,413 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:11:13,467 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:11:13,485 - text_summarizer - INFO - Generating executive summary...
+2026-01-13 02:11:39,409 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-13 02:11:49,767 - text_summarizer - INFO -   Positive: 264 chars
+2026-01-13 02:12:00,055 - text_summarizer - INFO -   Negative: 280 chars
+2026-01-13 02:19:29,237 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 02:19:29,255 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 02:19:29,255 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 02:19:29,259 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 02:19:29,260 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 02:19:32,108 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-13 02:19:32,108 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-13 02:19:32,109 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-13 02:19:34,482 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-13 02:19:34,482 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-13 02:19:34,482 - text_summarizer - INFO - Using device: CPU
+2026-01-13 02:19:34,484 - text_summarizer - INFO - Loading summarization model...
+2026-01-13 02:19:46,270 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 02:20:09,375 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 02:20:09,375 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-13 02:20:09,375 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-13 02:20:09,375 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-13 02:20:09,383 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 02:20:09,386 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 02:20:32,475 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 02:20:32,475 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 304 (58.8%)
+2026-01-13 02:20:32,475 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 138 (26.7%)
+2026-01-13 02:20:32,475 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-13 02:20:32,475 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-13 02:20:32,481 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-13 02:20:32,484 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 02:20:32,564 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 02:20:32,582 - text_summarizer - INFO - Generating executive summary...
+2026-01-13 02:21:00,501 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-13 02:21:12,619 - text_summarizer - INFO -   Positive: 285 chars
+2026-01-13 02:21:24,815 - text_summarizer - INFO -   Negative: 312 chars
