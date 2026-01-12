@@ -379,3 +379,33 @@ if __name__ == "__main__":
         preprocessor.stop()
     
     print("\n✨ Test complete!")
+
+
+# ============================================================
+# PANDAS-BASED PREPROCESSING (Spark-free, local execution)
+# ============================================================
+
+import re
+import pandas as pd
+from nltk.corpus import stopwords
+
+_stop_words = set(stopwords.words("english"))
+
+def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Clean and preprocess feedback data using pandas (Spark disabled)
+    """
+    df = df.copy()
+
+    def clean_text(text):
+        text = str(text).lower()
+        text = re.sub(r"[^a-z\s]", "", text)
+        words = [w for w in text.split() if w not in _stop_words]
+        return " ".join(words)
+
+    # IMPORTANT: column name must match your CSV
+    df["text_cleaned"] = df["text"].apply(clean_text)
+
+
+
+    return df
