@@ -12,6 +12,7 @@ import config
 import utils
 from data_ingestion import DataIngestion
 from data_preprocessing import SparkDataPreprocessor
+from data_preprocessing import preprocess_data
 from sentiment_analyzer import SentimentAnalyzer
 from topic_extractor import TopicExtractor
 from text_summarizer import TextSummarizer
@@ -147,14 +148,10 @@ class FeedbackAnalysisPipeline:
             self.logger.error("No data loaded. Run load_data() first.")
             return None
         
-        # Initialize preprocessor
-        self.preprocessor = SparkDataPreprocessor()
-        
-        # Process data
-        self.df = self.preprocessor.process_feedback_data(self.df)
-        
-        # Stop Spark session
-        self.preprocessor.stop()
+        ## Use pandas preprocessing instead of Spark
+
+        self.logger.info("STEP 2: DATA PREPROCESSING (Pandas)")
+        self.df = preprocess_data(self.df)
         
         self.logger.info(f"✅ Preprocessing complete: {len(self.df)} records")
         
@@ -188,12 +185,24 @@ class FeedbackAnalysisPipeline:
         
         # Get summary
         summary = self.sentiment_analyzer.get_sentiment_summary(self.df)
-        
-        self.logger.info(f"✅ Sentiment analysis complete")
-        self.logger.info(f"   Positive: {summary['positive_percentage']:.1f}%")
-        self.logger.info(f"   Negative: {summary['negative_percentage']:.1f}%")
-        self.logger.info(f"   Neutral: {summary['neutral_percentage']:.1f}%")
-        
+
+        # Defensive handling (summary contains counts, not percentages)
+        positive = int(summary.get("positive", 0))
+        negative = int(summary.get("negative", 0))
+        neutral  = int(summary.get("neutral", 0))
+
+        total = positive + negative + neutral
+
+
+        positive_pct = (summary.get("positive", 0) / total * 100) if total else 0
+        negative_pct = (summary.get("negative", 0) / total * 100) if total else 0
+        neutral_pct  = (summary.get("neutral", 0) / total * 100) if total else 0
+
+        self.logger.info("[OK] Sentiment analysis complete")
+        self.logger.info(f"   Positive: {positive_pct:.1f}%")
+        self.logger.info(f"   Negative: {negative_pct:.1f}%")
+        self.logger.info(f"   Neutral: {neutral_pct:.1f}%")
+
         return self.df
     
     # ========================================================================

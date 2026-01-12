@@ -1,0 +1,347 @@
+2026-01-12 21:15:29,202 - __main__ - INFO - ======================================================================
+2026-01-12 21:15:29,202 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-12 21:15:29,202 - __main__ - INFO - ======================================================================
+2026-01-12 21:15:29,202 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-12 21:15:29,277 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:15:29,277 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-12 21:15:29,277 - __main__ - INFO - ======================================================================
+2026-01-12 21:15:29,279 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:15:29,280 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-12 21:15:29,280 - __main__ - INFO - ======================================================================
+2026-01-12 21:15:29,280 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-12 21:15:29,303 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-12 21:15:29,303 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-12 21:15:29,321 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-12 21:15:29,322 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-12 21:15:29,325 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:15:29,326 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-12 21:15:29,326 - __main__ - INFO - ======================================================================
+2026-01-12 21:15:29,326 - data_preprocessing - INFO - Initializing Spark session...
+2026-01-12 21:25:45,879 - __main__ - INFO - ======================================================================
+2026-01-12 21:25:45,894 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-12 21:25:45,894 - __main__ - INFO - ======================================================================
+2026-01-12 21:25:45,894 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-12 21:25:45,917 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:25:45,918 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-12 21:25:45,918 - __main__ - INFO - ======================================================================
+2026-01-12 21:25:45,918 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:25:45,919 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-12 21:25:45,920 - __main__ - INFO - ======================================================================
+2026-01-12 21:25:45,920 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-12 21:25:45,930 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-12 21:25:45,930 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-12 21:25:45,934 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-12 21:25:45,935 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-12 21:25:45,938 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:25:45,938 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-12 21:25:45,938 - __main__ - INFO - ======================================================================
+2026-01-12 21:25:45,939 - data_preprocessing - INFO - Initializing Spark session...
+2026-01-12 21:50:44,129 - __main__ - INFO - ======================================================================
+2026-01-12 21:50:44,129 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-12 21:50:44,129 - __main__ - INFO - ======================================================================
+2026-01-12 21:50:44,144 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-12 21:50:44,173 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:50:44,173 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-12 21:50:44,173 - __main__ - INFO - ======================================================================
+2026-01-12 21:50:44,173 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:50:44,173 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-12 21:50:44,173 - __main__ - INFO - ======================================================================
+2026-01-12 21:50:44,173 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-12 21:50:44,173 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-12 21:50:44,173 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-12 21:50:44,189 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-12 21:50:44,189 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-12 21:50:44,189 - __main__ - INFO - 
+======================================================================
+2026-01-12 21:50:44,189 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-12 21:50:44,189 - __main__ - INFO - ======================================================================
+2026-01-12 21:50:44,189 - __main__ - INFO - STEP 2: DATA PREPROCESSING (Pandas)
+2026-01-12 21:50:44,189 - __main__ - ERROR - Pipeline failed: 'feedback'
+2026-01-12 21:50:44,310 - __main__ - ERROR - Traceback (most recent call last):
+  File "E:\PROJECT\smart_feedback_summarizer\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'feedback'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 335, in run_complete_pipeline
+    self.preprocess_data()
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 154, in preprocess_data
+    self.df = preprocess_data(self.df)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\smart_feedback_summarizer\data_preprocessing.py", line 407, in preprocess_data
+    df["cleaned_feedback"] = df["feedback"].apply(clean_text)
+                             ~~^^^^^^^^^^^^
+  File "E:\PROJECT\smart_feedback_summarizer\venv\Lib\site-packages\pandas\core\frame.py", line 3896, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\smart_feedback_summarizer\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'feedback'
+
+2026-01-13 00:19:01,239 - __main__ - INFO - ======================================================================
+2026-01-13 00:19:01,241 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:19:01,241 - __main__ - INFO - ======================================================================
+2026-01-13 00:19:01,241 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 00:19:01,254 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:19:01,254 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:19:01,254 - __main__ - INFO - ======================================================================
+2026-01-13 00:19:01,254 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:19:01,256 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-13 00:19:01,256 - __main__ - INFO - ======================================================================
+2026-01-13 00:19:01,256 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 00:19:01,265 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 00:19:01,265 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 00:19:01,270 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 00:19:01,270 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 00:19:01,276 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:19:01,276 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-13 00:19:01,277 - __main__ - INFO - ======================================================================
+2026-01-13 00:19:01,277 - __main__ - INFO - STEP 2: DATA PREPROCESSING (Pandas)
+2026-01-13 00:19:01,277 - __main__ - ERROR - Pipeline failed: 'feedback'
+2026-01-13 00:19:01,289 - __main__ - ERROR - Traceback (most recent call last):
+  File "E:\PROJECT\smart_feedback_summarizer\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'feedback'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 335, in run_complete_pipeline
+    self.preprocess_data()
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 154, in preprocess_data
+    self.df = preprocess_data(self.df)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\smart_feedback_summarizer\data_preprocessing.py", line 407, in preprocess_data
+    df["cleaned_feedback"] = df["feedback"].apply(clean_text)
+                             ~~^^^^^^^^^^^^
+  File "E:\PROJECT\smart_feedback_summarizer\venv\Lib\site-packages\pandas\core\frame.py", line 3896, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\smart_feedback_summarizer\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'feedback'
+
+2026-01-13 00:24:04,744 - __main__ - INFO - ======================================================================
+2026-01-13 00:24:04,744 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:24:04,744 - __main__ - INFO - ======================================================================
+2026-01-13 00:24:04,744 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 00:24:04,757 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:24:04,757 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:24:04,757 - __main__ - INFO - ======================================================================
+2026-01-13 00:24:04,757 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:24:04,757 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-13 00:24:04,757 - __main__ - INFO - ======================================================================
+2026-01-13 00:24:04,763 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 00:24:04,768 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 00:24:04,768 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 00:24:04,772 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 00:24:04,772 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 00:24:04,779 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:24:04,779 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-13 00:24:04,779 - __main__ - INFO - ======================================================================
+2026-01-13 00:24:04,779 - __main__ - INFO - STEP 2: DATA PREPROCESSING (Pandas)
+2026-01-13 00:24:04,799 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:24:04,799 - __main__ - INFO - STEP 3: SENTIMENT ANALYSIS
+2026-01-13 00:24:04,801 - __main__ - INFO - ======================================================================
+2026-01-13 00:24:04,802 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-13 00:24:04,802 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-13 00:24:04,802 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-13 00:24:31,719 - sentiment_analyzer - ERROR - Column 'text_cleaned' not found in DataFrame
+2026-01-13 00:24:31,736 - __main__ - ERROR - Pipeline failed: 'positive_percentage'
+2026-01-13 00:24:31,736 - __main__ - ERROR - Traceback (most recent call last):
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 340, in run_complete_pipeline
+    self.analyze_sentiment()
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 190, in analyze_sentiment
+    self.logger.info(f"   Positive: {summary['positive_percentage']:.1f}%")
+                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'positive_percentage'
+
+2026-01-13 00:30:18,677 - __main__ - INFO - ======================================================================
+2026-01-13 00:30:18,677 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:30:18,683 - __main__ - INFO - ======================================================================
+2026-01-13 00:30:18,683 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 00:30:18,692 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:30:18,692 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:30:18,695 - __main__ - INFO - ======================================================================
+2026-01-13 00:30:18,695 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:30:18,695 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-13 00:30:18,695 - __main__ - INFO - ======================================================================
+2026-01-13 00:30:18,695 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 00:30:18,700 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 00:30:18,700 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 00:30:18,700 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 00:30:18,707 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 00:30:18,709 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:30:18,713 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-13 00:30:18,713 - __main__ - INFO - ======================================================================
+2026-01-13 00:30:18,713 - __main__ - INFO - STEP 2: DATA PREPROCESSING (Pandas)
+2026-01-13 00:30:18,724 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:30:18,725 - __main__ - INFO - STEP 3: SENTIMENT ANALYSIS
+2026-01-13 00:30:18,725 - __main__ - INFO - ======================================================================
+2026-01-13 00:30:18,725 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-13 00:30:18,725 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-13 00:30:18,725 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-13 00:30:20,499 - sentiment_analyzer - ERROR - Column 'text_cleaned' not found in DataFrame
+2026-01-13 00:30:20,506 - __main__ - ERROR - Pipeline failed: 'positive_percentage'
+2026-01-13 00:30:20,507 - __main__ - ERROR - Traceback (most recent call last):
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 341, in run_complete_pipeline
+    self.analyze_sentiment()
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 191, in analyze_sentiment
+    self.logger.info(f"   Positive: {summary['positive_percentage']:.1f}%")
+                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'positive_percentage'
+
+2026-01-13 00:38:30,562 - __main__ - INFO - ======================================================================
+2026-01-13 00:38:30,562 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:38:30,562 - __main__ - INFO - ======================================================================
+2026-01-13 00:38:30,562 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 00:38:30,574 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:38:30,574 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:38:30,574 - __main__ - INFO - ======================================================================
+2026-01-13 00:38:30,574 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:38:30,574 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-13 00:38:30,578 - __main__ - INFO - ======================================================================
+2026-01-13 00:38:30,578 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 00:38:30,579 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 00:38:30,579 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 00:38:30,589 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 00:38:30,589 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 00:38:30,595 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:38:30,595 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-13 00:38:30,595 - __main__ - INFO - ======================================================================
+2026-01-13 00:38:30,596 - __main__ - INFO - STEP 2: DATA PREPROCESSING (Pandas)
+2026-01-13 00:38:30,606 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:38:30,606 - __main__ - INFO - STEP 3: SENTIMENT ANALYSIS
+2026-01-13 00:38:30,606 - __main__ - INFO - ======================================================================
+2026-01-13 00:38:30,608 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-13 00:38:30,608 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-13 00:38:30,608 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-13 00:38:32,415 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 00:38:50,037 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 00:38:50,038 - sentiment_analyzer - INFO -   Positive: 327 (63.2%)
+2026-01-13 00:38:50,038 - sentiment_analyzer - INFO -   Negative: 190 (36.8%)
+2026-01-13 00:38:50,038 - sentiment_analyzer - INFO - Average Confidence: 0.990
+2026-01-13 00:38:50,050 - __main__ - ERROR - Pipeline failed: ufunc 'add' did not contain a loop with signature matching types (dtype('float64'), dtype('<U71')) -> None
+2026-01-13 00:38:50,050 - __main__ - ERROR - Traceback (most recent call last):
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 347, in run_complete_pipeline
+    self.analyze_sentiment()
+  File "E:\PROJECT\smart_feedback_summarizer\main.py", line 190, in analyze_sentiment
+    total = sum(summary.values()) if summary else 0
+            ^^^^^^^^^^^^^^^^^^^^^
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'add' did not contain a loop with signature matching types (dtype('float64'), dtype('<U71')) -> None
+
+2026-01-13 00:43:59,355 - __main__ - INFO - ======================================================================
+2026-01-13 00:43:59,355 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:43:59,355 - __main__ - INFO - ======================================================================
+2026-01-13 00:43:59,355 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-13 00:43:59,371 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:43:59,372 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-13 00:43:59,372 - __main__ - INFO - ======================================================================
+2026-01-13 00:43:59,372 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:43:59,372 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-13 00:43:59,374 - __main__ - INFO - ======================================================================
+2026-01-13 00:43:59,374 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-13 00:43:59,384 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-13 00:43:59,384 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-13 00:43:59,389 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-13 00:43:59,389 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-13 00:43:59,394 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:43:59,394 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-13 00:43:59,394 - __main__ - INFO - ======================================================================
+2026-01-13 00:43:59,394 - __main__ - INFO - STEP 2: DATA PREPROCESSING (Pandas)
+2026-01-13 00:43:59,406 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:43:59,411 - __main__ - INFO - STEP 3: SENTIMENT ANALYSIS
+2026-01-13 00:43:59,411 - __main__ - INFO - ======================================================================
+2026-01-13 00:43:59,411 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-13 00:43:59,411 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-13 00:43:59,414 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-13 00:44:01,074 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-13 00:44:17,049 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-13 00:44:17,049 - sentiment_analyzer - INFO -   Positive: 327 (63.2%)
+2026-01-13 00:44:17,049 - sentiment_analyzer - INFO -   Negative: 190 (36.8%)
+2026-01-13 00:44:17,054 - sentiment_analyzer - INFO - Average Confidence: 0.990
+2026-01-13 00:44:17,064 - __main__ - INFO - [OK] Sentiment analysis complete
+2026-01-13 00:44:17,064 - __main__ - INFO -    Positive: 0.0%
+2026-01-13 00:44:17,066 - __main__ - INFO -    Negative: 0.0%
+2026-01-13 00:44:17,066 - __main__ - INFO -    Neutral: 0.0%
+2026-01-13 00:44:17,070 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:44:17,070 - __main__ - INFO - STEP 4: TOPIC EXTRACTION
+2026-01-13 00:44:17,070 - __main__ - INFO - ======================================================================
+2026-01-13 00:44:17,073 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-13 00:44:17,074 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-13 00:44:17,075 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-13 00:46:02,068 - topic_extractor - INFO - Topic Distribution:
+2026-01-13 00:46:02,069 - topic_extractor - INFO -   Product | Impressive | Particularly Impressive: 347 (67.1%)
+2026-01-13 00:46:02,069 - topic_extractor - INFO -   Service | Support | Quality Excellent: 73 (14.1%)
+2026-01-13 00:46:02,070 - topic_extractor - INFO -   Better | Purchase | Expected: 44 (8.5%)
+2026-01-13 00:46:02,070 - topic_extractor - INFO -   Outlier: 39 (7.5%)
+2026-01-13 00:46:02,070 - topic_extractor - INFO -   Performance | Great | Great Performance: 14 (2.7%)
+2026-01-13 00:46:02,081 - __main__ - INFO -    Topics identified: 4
+2026-01-13 00:46:02,081 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:46:02,083 - __main__ - INFO - STEP 5: TEXT SUMMARIZATION
+2026-01-13 00:46:02,083 - __main__ - INFO - ======================================================================
+2026-01-13 00:46:02,083 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-13 00:46:02,085 - text_summarizer - INFO - Using device: CPU
+2026-01-13 00:46:02,085 - text_summarizer - INFO - Loading summarization model...
+2026-01-13 00:48:31,817 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-13 00:48:43,738 - text_summarizer - INFO -   Positive: 481 chars
+2026-01-13 00:48:54,207 - text_summarizer - INFO -   Negative: 374 chars
+2026-01-13 00:48:54,220 - text_summarizer - INFO - Creating topic-specific summaries...
+2026-01-13 00:49:05,384 - text_summarizer - INFO -   Product | Impressive | Particularly Impressive: 419 chars
+2026-01-13 00:49:14,850 - text_summarizer - INFO -   Service | Support | Quality Excellent: 373 chars
+2026-01-13 00:49:24,688 - text_summarizer - INFO -   Better | Purchase | Expected: 430 chars
+2026-01-13 00:49:38,163 - text_summarizer - INFO -   Performance | Great | Great Performance: 341 chars
+2026-01-13 00:49:38,163 - text_summarizer - INFO - Generating executive summary...
+2026-01-13 00:50:02,602 - __main__ - INFO -    Executive summary length: 920 chars
+2026-01-13 00:50:02,605 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:50:02,605 - __main__ - INFO - STEP 6: SAVING RESULTS
+2026-01-13 00:50:02,605 - __main__ - INFO - ======================================================================
+2026-01-13 00:50:02,652 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-13 00:50:02,657 - __main__ - INFO - 
+======================================================================
+2026-01-13 00:50:02,657 - __main__ - INFO - PIPELINE COMPLETED SUCCESSFULLY
+2026-01-13 00:50:02,657 - __main__ - INFO - ======================================================================
+2026-01-13 00:50:02,657 - __main__ - INFO - Total duration: 363.29 seconds
+2026-01-13 00:50:02,659 - __main__ - INFO - Records processed: 517

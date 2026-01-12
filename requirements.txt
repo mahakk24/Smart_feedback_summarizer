@@ -37,4 +37,3 @@ beautifulsoup4==4.12.2
 
 # Additional ML Tools
 umap-learn==0.5.4
-hdbscan==0.8.33
