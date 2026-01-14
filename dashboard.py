@@ -44,15 +44,16 @@ st.set_page_config(
 st.markdown("""
 <style>
     .main-header {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #1f77b4;
+        font-size: 2.6rem;
+        font-weight: 700;
+        color: #3e2a1f;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.3rem;
     }
+
     .sub-header {
-        font-size: 1.5rem;
-        color: #666;
+        font-size: 1.2rem;
+        color: #6f5a4a;
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -109,27 +110,33 @@ def get_analyzers():
     }
 
 def create_sentiment_pie_chart(df):
-    """Create sentiment distribution pie chart"""
     sentiment_counts = df['sentiment'].value_counts()
-    
+
+    # Professional blue palette (no red/green)
+    color_map = {
+        'positive': '#1f4e79',  
+        'negative': '#4f81bd',   
+        'neutral':  '#c9daf8'    
+    }
+
     fig = go.Figure(data=[go.Pie(
         labels=sentiment_counts.index,
         values=sentiment_counts.values,
-        marker=dict(colors=[
-            config.COLOR_POSITIVE if x == 'positive' else 
-            config.COLOR_NEGATIVE if x == 'negative' else 
-            config.COLOR_NEUTRAL 
-            for x in sentiment_counts.index
-        ]),
-        hole=0.4
+        marker=dict(
+            colors=[color_map[s] for s in sentiment_counts.index]
+        ),
+        hole=0.45,
+        textinfo='percent'
     )])
-    
+
     fig.update_layout(
         title="Sentiment Distribution",
-        height=400,
+        paper_bgcolor="#faf6f1",
+        plot_bgcolor="#faf6f1",
+        font=dict(color="#3e2a1f"),
         showlegend=True
     )
-    
+
     return fig
 
 def create_timeline_chart(df):
@@ -144,13 +151,13 @@ def create_timeline_chart(df):
         y='count',
         color='sentiment',
         color_discrete_map={
-            'positive': config.COLOR_POSITIVE,
-            'negative': config.COLOR_NEGATIVE,
-            'neutral': config.COLOR_NEUTRAL
+            'positive': '#1f4e79',  
+            'negative': '#4f81bd',   
+            'neutral':  '#c9daf8'       
         },
         title="Sentiment Trends Over Time"
     )
-    
+    fig.update_traces(line=dict(width=3))
     fig.update_layout(height=400)
     
     return fig
@@ -202,17 +209,17 @@ def create_wordcloud(texts):
 
 def main():
     # Header
-    st.markdown('<div class="main-header">📊 Smart Feedback Summarizer</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">AI-Powered Customer Feedback Analysis System</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-header">Customer Feedback Intelligence Dashboard</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Sentiment, Topics & Insights from Customer Data</div>', unsafe_allow_html=True)
     
     # ========================================================================
     # SIDEBAR
     # ========================================================================
     
-    st.sidebar.title("⚙️ Settings")
+    st.sidebar.title("⚙️Control Panel")
     
     # Data source selection
-    st.sidebar.subheader("1️⃣ Data Source")
+    st.sidebar.subheader("📁 Data Input")
     data_source = st.sidebar.radio(
         "Select data source:",
         ["Upload CSV", "Use Sample Data", "Load from Database"]
@@ -227,13 +234,13 @@ def main():
         )
     
     # Analysis options
-    st.sidebar.subheader("2️⃣ Analysis Options")
+    st.sidebar.subheader("🧠 Analysis Configuration")
     run_sentiment = st.sidebar.checkbox("Sentiment Analysis", value=True)
     run_topics = st.sidebar.checkbox("Topic Extraction", value=True)
     run_summary = st.sidebar.checkbox("Text Summarization", value=True)
     
     # Run analysis button
-    analyze_button = st.sidebar.button("🚀 Run Analysis", type="primary", use_container_width=True)
+    analyze_button = st.sidebar.button("▶️ Start Analysis", type="primary", use_container_width=True)
     
     # ========================================================================
     # DATA LOADING
@@ -271,7 +278,8 @@ def main():
     # ========================================================================
     
     if st.session_state.data_loaded and st.session_state.df is not None:
-        st.header("📋 Data Overview")
+        st.header("📋 Dataset Overview")
+
         
         col1, col2, col3, col4 = st.columns(4)
         with col1:

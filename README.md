@@ -15,6 +15,20 @@ An AI-powered system for automatically analyzing large volumes of customer feedb
 - **📥 Export Capabilities**: CSV and PDF report generation
 
 ---
+## 📸 Dashboard Preview
+
+### 📊 Overview & Key Metrics
+![Overview Dashboard](image.png)
+
+### 😊 Sentiment Analysis
+![Sentiment Analysis](image-1.png)
+
+### 🏷️ Topic Analysis
+![Topic Analysis](image-2.png)
+
+### 📝 Executive Summary
+![Executive Summary](image-3.png)
+
 
 ## 🏗️ System Architecture
 

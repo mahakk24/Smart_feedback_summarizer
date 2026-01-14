@@ -845,3 +845,305 @@ numpy.core._exceptions._UFuncNoLoopError: ufunc 'add' did not contain a loop wit
 2026-01-13 02:21:00,501 - text_summarizer - INFO - Creating sentiment-specific summaries...
 2026-01-13 02:21:12,619 - text_summarizer - INFO -   Positive: 285 chars
 2026-01-13 02:21:24,815 - text_summarizer - INFO -   Negative: 312 chars
+2026-01-14 18:18:48,804 - __main__ - INFO - ======================================================================
+2026-01-14 18:18:48,804 - __main__ - INFO - INITIALIZING FEEDBACK ANALYSIS PIPELINE
+2026-01-14 18:18:48,804 - __main__ - INFO - ======================================================================
+2026-01-14 18:18:48,804 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 18:18:48,904 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:18:48,904 - __main__ - INFO - STARTING COMPLETE FEEDBACK ANALYSIS PIPELINE
+2026-01-14 18:18:48,906 - __main__ - INFO - ======================================================================
+2026-01-14 18:18:48,906 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:18:48,906 - __main__ - INFO - STEP 1: DATA INGESTION
+2026-01-14 18:18:48,906 - __main__ - INFO - ======================================================================
+2026-01-14 18:18:48,906 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 18:18:48,942 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 18:18:48,942 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 18:18:48,968 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 18:18:48,968 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 18:18:48,974 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:18:48,975 - __main__ - INFO - STEP 2: DATA PREPROCESSING (PySpark)
+2026-01-14 18:18:48,975 - __main__ - INFO - ======================================================================
+2026-01-14 18:18:48,975 - __main__ - INFO - STEP 2: DATA PREPROCESSING (Pandas)
+2026-01-14 18:18:49,054 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:18:49,054 - __main__ - INFO - STEP 3: SENTIMENT ANALYSIS
+2026-01-14 18:18:49,056 - __main__ - INFO - ======================================================================
+2026-01-14 18:18:49,056 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 18:18:49,056 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 18:18:49,058 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 18:18:51,931 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 18:19:08,526 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 18:19:08,526 - sentiment_analyzer - INFO -   Positive: 327 (63.2%)
+2026-01-14 18:19:08,527 - sentiment_analyzer - INFO -   Negative: 190 (36.8%)
+2026-01-14 18:19:08,527 - sentiment_analyzer - INFO - Average Confidence: 0.990
+2026-01-14 18:19:08,543 - __main__ - INFO - [OK] Sentiment analysis complete
+2026-01-14 18:19:08,543 - __main__ - INFO -    Positive: 0.0%
+2026-01-14 18:19:08,543 - __main__ - INFO -    Negative: 0.0%
+2026-01-14 18:19:08,543 - __main__ - INFO -    Neutral: 0.0%
+2026-01-14 18:19:08,545 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:19:08,545 - __main__ - INFO - STEP 4: TOPIC EXTRACTION
+2026-01-14 18:19:08,545 - __main__ - INFO - ======================================================================
+2026-01-14 18:19:08,545 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 18:19:08,545 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 18:19:08,545 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 18:19:31,913 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 18:19:31,914 - topic_extractor - INFO -   Product | Impressive | Particularly Impressive: 393 (76.0%)
+2026-01-14 18:19:31,914 - topic_extractor - INFO -   Outlier: 57 (11.0%)
+2026-01-14 18:19:31,914 - topic_extractor - INFO -   Disappointed | Build | Build Quality: 40 (7.7%)
+2026-01-14 18:19:31,917 - topic_extractor - INFO -   Performance | Great | Great Performance: 14 (2.7%)
+2026-01-14 18:19:31,917 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-14 18:19:31,922 - __main__ - INFO -    Topics identified: 4
+2026-01-14 18:19:31,922 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:19:31,929 - __main__ - INFO - STEP 5: TEXT SUMMARIZATION
+2026-01-14 18:19:31,929 - __main__ - INFO - ======================================================================
+2026-01-14 18:19:31,929 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 18:19:31,929 - text_summarizer - INFO - Using device: CPU
+2026-01-14 18:19:31,931 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 18:19:46,932 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 18:20:01,622 - text_summarizer - INFO -   Positive: 508 chars
+2026-01-14 18:20:15,868 - text_summarizer - INFO -   Negative: 561 chars
+2026-01-14 18:20:15,883 - text_summarizer - INFO - Creating topic-specific summaries...
+2026-01-14 18:20:26,951 - text_summarizer - INFO -   Product | Impressive | Particularly Impressive: 414 chars
+2026-01-14 18:20:37,315 - text_summarizer - INFO -   Disappointed | Build | Build Quality: 426 chars
+2026-01-14 18:20:47,330 - text_summarizer - INFO -   Performance | Great | Great Performance: 391 chars
+2026-01-14 18:20:57,014 - text_summarizer - INFO -   Completely | Particularly Impressive | Particularly: 406 chars
+2026-01-14 18:20:57,014 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 18:21:30,547 - __main__ - INFO -    Executive summary length: 1295 chars
+2026-01-14 18:21:30,549 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:21:30,549 - __main__ - INFO - STEP 6: SAVING RESULTS
+2026-01-14 18:21:30,551 - __main__ - INFO - ======================================================================
+2026-01-14 18:21:30,608 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 18:21:30,610 - __main__ - INFO - 
+======================================================================
+2026-01-14 18:21:30,610 - __main__ - INFO - PIPELINE COMPLETED SUCCESSFULLY
+2026-01-14 18:21:30,612 - __main__ - INFO - ======================================================================
+2026-01-14 18:21:30,612 - __main__ - INFO - Total duration: 161.70 seconds
+2026-01-14 18:21:30,612 - __main__ - INFO - Records processed: 517
+2026-01-14 18:23:33,992 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 18:23:34,002 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 18:23:34,008 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 18:23:34,008 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 18:23:34,008 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 18:25:35,187 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 18:25:35,192 - data_ingestion - ERROR - Required 'text' column not found
+2026-01-14 18:25:43,469 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 18:25:43,473 - data_ingestion - ERROR - Required 'text' column not found
+2026-01-14 18:31:21,664 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 18:31:21,670 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 18:31:21,671 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 18:31:25,748 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 18:31:25,755 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 18:31:25,755 - text_summarizer - INFO - Using device: CPU
+2026-01-14 18:31:25,755 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 18:31:45,290 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 18:32:24,372 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 18:32:24,372 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-14 18:32:24,372 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-14 18:32:24,372 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-14 18:32:24,381 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 18:32:24,387 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 18:33:06,416 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 18:33:06,419 - topic_extractor - INFO -   Impressive | Particularly | Particularly Impressive: 309 (59.8%)
+2026-01-14 18:33:06,419 - topic_extractor - INFO -   Really Disappointing | Disappointing | Terrible: 133 (25.7%)
+2026-01-14 18:33:06,419 - topic_extractor - INFO -   Product | Product Works | Work: 47 (9.1%)
+2026-01-14 18:33:06,421 - topic_extractor - INFO -   Outlier: 17 (3.3%)
+2026-01-14 18:33:06,421 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-14 18:33:06,422 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 18:33:06,488 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 18:33:06,518 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 18:33:40,815 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 18:33:57,185 - text_summarizer - INFO -   Positive: 276 chars
+2026-01-14 18:34:12,517 - text_summarizer - INFO -   Negative: 261 chars
+2026-01-14 18:54:05,520 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 18:54:05,535 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 18:54:05,535 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 18:54:05,565 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 18:54:05,567 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 18:54:11,975 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 18:54:11,976 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 18:54:11,976 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 18:54:15,581 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 18:54:15,581 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 18:54:15,581 - text_summarizer - INFO - Using device: CPU
+2026-01-14 18:54:15,581 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 18:54:35,283 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 18:55:09,502 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 18:55:09,502 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-14 18:55:09,502 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-14 18:55:09,508 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-14 18:55:09,511 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 18:55:09,515 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 18:55:46,778 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 18:55:46,778 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 291 (56.3%)
+2026-01-14 18:55:46,778 - topic_extractor - INFO -   Really Disappointing | Disappointing | Quality: 154 (29.8%)
+2026-01-14 18:55:46,778 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-14 18:55:46,778 - topic_extractor - INFO -   Outlier: 18 (3.5%)
+2026-01-14 18:55:46,778 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-14 18:55:46,785 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 18:55:46,861 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 18:55:46,902 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 18:56:20,231 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 18:56:33,821 - text_summarizer - INFO -   Positive: 286 chars
+2026-01-14 18:56:53,365 - text_summarizer - INFO -   Negative: 286 chars
+2026-01-14 18:57:18,709 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 18:58:40,098 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 18:59:06,509 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 18:59:06,509 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-14 18:59:06,509 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-14 18:59:06,511 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-14 18:59:06,511 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 18:59:06,511 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 18:59:18,205 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 18:59:18,205 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 286 (55.3%)
+2026-01-14 18:59:18,205 - topic_extractor - INFO -   Really Disappointing | Disappointing | Quality: 154 (29.8%)
+2026-01-14 18:59:18,205 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-14 18:59:18,205 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-14 18:59:18,205 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-14 18:59:18,205 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 18:59:18,266 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 18:59:18,285 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 18:59:51,973 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 19:00:08,478 - text_summarizer - INFO -   Positive: 286 chars
+2026-01-14 19:00:24,911 - text_summarizer - INFO -   Negative: 281 chars
+2026-01-14 19:36:35,747 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 19:36:35,766 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 19:36:35,768 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 19:36:35,774 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 19:36:35,776 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 19:36:53,071 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 19:36:53,071 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 19:36:53,071 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 19:36:56,517 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 19:36:56,517 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 19:36:56,517 - text_summarizer - INFO - Using device: CPU
+2026-01-14 19:36:56,517 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 19:37:15,095 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 19:37:45,149 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 19:37:45,151 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-14 19:37:45,152 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-14 19:37:45,159 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-14 19:37:45,164 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 19:37:45,166 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 19:38:27,836 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 19:38:27,837 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-14 19:38:27,837 - topic_extractor - INFO -   Disappointing | Really Disappointing | Quality: 143 (27.7%)
+2026-01-14 19:38:27,837 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-14 19:38:27,837 - topic_extractor - INFO -   Outlier: 23 (4.4%)
+2026-01-14 19:38:27,842 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-14 19:38:27,844 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 19:38:27,915 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 19:38:27,953 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 19:39:03,721 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 19:39:18,611 - text_summarizer - INFO -   Positive: 280 chars
+2026-01-14 19:39:33,700 - text_summarizer - INFO -   Negative: 274 chars
+2026-01-14 19:51:41,269 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 19:51:41,287 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 19:51:41,287 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 19:51:41,294 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 19:51:41,294 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 19:51:45,376 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 19:51:45,381 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 19:51:45,381 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 19:51:48,709 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 19:51:48,709 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 19:51:48,709 - text_summarizer - INFO - Using device: CPU
+2026-01-14 19:51:48,709 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 19:52:07,328 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 19:52:35,814 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 19:52:35,814 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-14 19:52:35,814 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-14 19:52:35,820 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-14 19:52:35,834 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 19:52:35,837 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 19:53:16,481 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 19:53:16,481 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 287 (55.5%)
+2026-01-14 19:53:16,483 - topic_extractor - INFO -   Really Disappointing | Disappointing | Really: 154 (29.8%)
+2026-01-14 19:53:16,485 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-14 19:53:16,485 - topic_extractor - INFO -   Outlier: 22 (4.3%)
+2026-01-14 19:53:16,485 - topic_extractor - INFO -   Completely | Particularly Impressive | Particularly: 13 (2.5%)
+2026-01-14 19:53:16,489 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 19:53:16,547 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 19:53:16,571 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 19:53:49,170 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 19:54:04,866 - text_summarizer - INFO -   Positive: 285 chars
+2026-01-14 19:54:21,065 - text_summarizer - INFO -   Negative: 302 chars
+2026-01-14 20:00:02,741 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 20:00:02,762 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 20:00:02,762 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 20:00:02,768 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 20:00:02,770 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 20:00:09,259 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 20:00:09,262 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 20:00:09,262 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 20:00:12,894 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 20:00:12,894 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 20:00:12,895 - text_summarizer - INFO - Using device: CPU
+2026-01-14 20:00:12,895 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 20:03:03,421 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 20:03:03,443 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 20:03:03,443 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 20:03:03,459 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 20:03:03,459 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 20:03:11,824 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 20:03:11,827 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 20:03:11,827 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 20:03:15,216 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 20:03:15,216 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 20:03:15,216 - text_summarizer - INFO - Using device: CPU
+2026-01-14 20:03:15,216 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 20:03:31,878 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 20:04:00,326 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 20:04:00,328 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-14 20:04:00,328 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-14 20:04:00,332 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-14 20:04:00,338 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 20:04:00,341 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 20:04:43,054 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 20:04:43,061 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-14 20:04:43,061 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 133 (25.7%)
+2026-01-14 20:04:43,061 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-14 20:04:43,061 - topic_extractor - INFO -   Outlier: 33 (6.4%)
+2026-01-14 20:04:43,061 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-14 20:04:43,066 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 20:04:43,135 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 20:04:43,208 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 20:05:15,426 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 20:05:32,643 - text_summarizer - INFO -   Positive: 250 chars
+2026-01-14 20:05:49,328 - text_summarizer - INFO -   Negative: 250 chars
+2026-01-14 20:39:01,104 - data_ingestion - INFO - Loading data from CSV: E:\PROJECT\smart_feedback_summarizer\data\customer_feedback.csv
+2026-01-14 20:39:01,127 - data_ingestion - INFO - Successfully loaded 524 records
+2026-01-14 20:39:01,129 - data_ingestion - INFO - Validating and standardizing data...
+2026-01-14 20:39:01,148 - data_ingestion - INFO - Removed 7 rows with empty text
+2026-01-14 20:39:01,148 - data_ingestion - INFO - Validation complete. 517 valid records.
+2026-01-14 20:39:03,247 - sentiment_analyzer - INFO - Initializing sentiment analyzer with model: distilbert-base-uncased-finetuned-sst-2-english
+2026-01-14 20:39:03,247 - sentiment_analyzer - INFO - Using device: CPU
+2026-01-14 20:39:03,260 - sentiment_analyzer - INFO - Loading model and tokenizer...
+2026-01-14 20:39:07,032 - topic_extractor - INFO - Initializing Topic Extractor (n_topics=5)
+2026-01-14 20:39:07,032 - text_summarizer - INFO - Initializing text summarizer with model: facebook/bart-large-cnn
+2026-01-14 20:39:07,032 - text_summarizer - INFO - Using device: CPU
+2026-01-14 20:39:07,032 - text_summarizer - INFO - Loading summarization model...
+2026-01-14 20:39:30,059 - sentiment_analyzer - INFO - Analyzing sentiment for 517 texts...
+2026-01-14 20:39:53,781 - sentiment_analyzer - INFO - Sentiment Distribution:
+2026-01-14 20:39:53,781 - sentiment_analyzer - INFO -   Positive: 365 (70.6%)
+2026-01-14 20:39:53,781 - sentiment_analyzer - INFO -   Negative: 152 (29.4%)
+2026-01-14 20:39:53,792 - sentiment_analyzer - INFO - Average Confidence: 0.991
+2026-01-14 20:39:53,797 - topic_extractor - INFO - Extracting topics from 517 documents...
+2026-01-14 20:39:53,799 - topic_extractor - INFO - Creating BERTopic model...
+2026-01-14 20:40:13,620 - topic_extractor - INFO - Topic Distribution:
+2026-01-14 20:40:13,620 - topic_extractor - INFO -   Impressive | Particularly Impressive | Particularly: 299 (57.8%)
+2026-01-14 20:40:13,620 - topic_extractor - INFO -   Disappointing | Really Disappointing | Terrible: 128 (24.8%)
+2026-01-14 20:40:13,620 - topic_extractor - INFO -   Product | Product Works | Okay: 41 (7.9%)
+2026-01-14 20:40:13,620 - topic_extractor - INFO -   Outlier: 38 (7.4%)
+2026-01-14 20:40:13,620 - topic_extractor - INFO -   Decent | Worst | Best: 11 (2.1%)
+2026-01-14 20:40:13,620 - database_manager - INFO - Initializing SQLite Manager: E:\PROJECT\smart_feedback_summarizer\data\feedback.db
+2026-01-14 20:40:13,674 - database_manager - ERROR - Error inserting feedback: table feedback has no column named sentiment_label
+2026-01-14 20:40:13,692 - text_summarizer - INFO - Generating executive summary...
+2026-01-14 20:40:41,017 - text_summarizer - INFO - Creating sentiment-specific summaries...
+2026-01-14 20:40:56,034 - text_summarizer - INFO -   Positive: 308 chars
+2026-01-14 20:41:10,558 - text_summarizer - INFO -   Negative: 302 chars
